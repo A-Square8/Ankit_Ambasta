@@ -73,6 +73,13 @@ const App = () => {
       github: 'https://github.com/ambastaankit8/industrial-safety'
     },
     {
+      title: 'MediTrack',
+      description: 'Comprehensive Android medicine reminder app with smart notifications, analytics dashboard, PDF reporting, and SQLite database for tracking medication schedules and adherence.',
+      tech: ['Kotlin', 'Android', 'SQLite', 'Material Design'],
+      gradient: 'linear-gradient(135deg, #ff9a56 0%, #ffad56 100%)',
+      github: 'https://github.com/A-Square8/MediTrack2',
+    },
+    {
       title: 'Smart Suit for Industrial Workers',
       description: 'Software simulation of a wearable smart suit with sensors and actuators to monitor workers\' health, safety, and performance in extreme industrial environments.',
       tech: ['Arduino', 'Proteus', 'Sensors', 'Simulation'],
@@ -95,20 +102,20 @@ const App = () => {
     <div className="app">
       {/* Font Awesome CDN */}
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-      
+
       {/* Animated Background */}
-      <motion.div 
+      <motion.div
         className="animated-background"
         style={{ y: backgroundY }}
       />
-      
+
       {/* Floating Particles */}
       <div className="particles">
         {[...Array(50)].map((_, i) => (
           <motion.div
             key={i}
             className="particle"
-            initial={{ 
+            initial={{
               x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200),
               y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800),
               scale: 0
@@ -128,20 +135,20 @@ const App = () => {
       </div>
 
       {/* Navigation */}
-      <motion.nav 
+      <motion.nav
         className="navbar"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ type: "spring", stiffness: 100 }}
       >
-        <motion.div 
+        <motion.div
           className="logo"
           whileHover={{ scale: 1.1, rotate: 5 }}
           whileTap={{ scale: 0.9 }}
         >
           <i className="fas fa-code"></i> Portfolio
         </motion.div>
-        
+
         {/* Desktop Navigation */}
         <ul className="nav-links desktop-nav">
           {sections.map((section) => (
@@ -208,7 +215,7 @@ const App = () => {
       </AnimatePresence>
 
       {/* Hero Section */}
-      <motion.section 
+      <motion.section
         id="home"
         className="hero"
         initial={{ opacity: 0 }}
@@ -220,14 +227,14 @@ const App = () => {
             className="profile-container"
             initial={{ scale: 0, rotate: -180 }}
             animate={{ scale: 1, rotate: 0 }}
-            transition={{ 
-              type: "spring", 
-              stiffness: 100, 
+            transition={{
+              type: "spring",
+              stiffness: 100,
               delay: 0.5,
-              duration: 1.5 
+              duration: 1.5
             }}
-            whileHover={{ 
-              scale: 1.1, 
+            whileHover={{
+              scale: 1.1,
               rotate: 5,
               boxShadow: "0 0 50px rgba(102, 126, 234, 0.8)"
             }}
@@ -273,9 +280,9 @@ const App = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary"
-              whileHover={{ 
-                scale: 1.05, 
-                boxShadow: "0 10px 30px rgba(102, 126, 234, 0.4)" 
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 10px 30px rgba(102, 126, 234, 0.4)"
               }}
               whileTap={{ scale: 0.95 }}
             >
@@ -283,7 +290,7 @@ const App = () => {
             </motion.a>
             <motion.button
               className="btn btn-secondary"
-              whileHover={{ 
+              whileHover={{
                 scale: 1.05,
                 backgroundColor: "rgba(255,255,255,0.2)"
               }}
@@ -297,7 +304,7 @@ const App = () => {
       </motion.section>
 
       {/* Skills Section */}
-      <motion.section 
+      <motion.section
         id="skills"
         className="skills-section"
         initial={{ opacity: 0 }}
@@ -322,14 +329,14 @@ const App = () => {
               className="skill-card"
               initial={{ opacity: 0, scale: 0, rotate: -180 }}
               whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-              transition={{ 
-                delay: index * 0.1, 
+              transition={{
+                delay: index * 0.1,
                 duration: 0.6,
                 type: "spring",
                 stiffness: 100
               }}
-              whileHover={{ 
-                scale: 1.2, 
+              whileHover={{
+                scale: 1.2,
                 rotate: 10,
                 boxShadow: `0 10px 30px ${skill.color}40`
               }}
@@ -344,7 +351,7 @@ const App = () => {
       </motion.section>
 
       {/* Projects Section */}
-      <motion.section 
+      <motion.section
         id="projects"
         className="projects-section"
         initial={{ opacity: 0 }}
@@ -370,7 +377,7 @@ const App = () => {
               initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.2, duration: 0.8 }}
-              whileHover={{ 
+              whileHover={{
                 scale: 1.05,
                 rotateY: 10,
                 boxShadow: "0 20px 40px rgba(0,0,0,0.2)"
@@ -409,7 +416,7 @@ const App = () => {
                   >
                     <i className="fab fa-github"></i> GitHub
                   </motion.a>
-                  
+
                   {project.live && (
                     <motion.a
                       href={project.live}
@@ -430,7 +437,7 @@ const App = () => {
       </motion.section>
 
       {/* Contact Section */}
-      <motion.section 
+      <motion.section
         id="contact"
         className="contact-section"
         initial={{ opacity: 0 }}
