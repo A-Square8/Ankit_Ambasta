@@ -1,0 +1,27 @@
+name: Auto-Documentation
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  document:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        pip install gitpython requests
+    - name: Run CodeHarvest
+      run: python codeharvest.py --github-url https://github.com/A-Square8/<git.repo.base.Repo 'C:\\Users\\anany\\AppData\\Local\\Temp\\tmplgroit3v\\.git'> --token ${ secrets.GITHUB_TOKEN } --generate-readme
+    - name: Commit documentation
+      run: |
+        git config --local user.email 'action@github.com'
+        git config --local user.name 'GitHub Action'
+        git add README.md
+        git commit -m 'Update documentation [CodeHarvest]' || echo 'No changes to commit'
+        git push
